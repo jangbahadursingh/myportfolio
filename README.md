@@ -21,7 +21,7 @@ The supplied `index.html` is a self-contained front-end project with embedded CS
 - ⌨️ Animated **Now Learning** typing section
 - 🚀 Projects showcase with technology chips
 - 🎓 Education timeline
-- 📂 Expandable Details / accordion sections
+- 📂 Expandable Details / according sections
 - 🍃 Animated falling-leaves background
 - 🎨 Gradient dark UI with animations
 - ♿ ARIA labels and keyboard-friendly controls
