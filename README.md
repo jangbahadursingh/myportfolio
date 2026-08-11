@@ -184,10 +184,10 @@ The JavaScript supports:
 - Close menu
 - Close after selecting a link
 - Close when switching back to desktop
-- Close using the **Escape** key
+- Close using the **Escape** key.
 ```
 
-## 🎯 Project Purpose
+### 🎯 Project Purpose
 
 This project can be used as:
 
@@ -196,7 +196,7 @@ This project can be used as:
 - Fresher developer profile
 - Academic project showcase
 
-## 🔮 Future Improvements
+### 🔮 Future Improvements
 
 Possible additions include:
 
@@ -208,7 +208,7 @@ Possible additions include:
 - 🏆 Certificate links
 - 🖼️ Project screenshots
 
-## 👨‍💻 Developer
+### 👨‍💻 Developer
 
 **JANG BAHADUR SINGH**
 
@@ -217,13 +217,13 @@ Possible additions include:
 🌐 Web Development  
 🚀 Learning and Building Projects
 
-## 🔗 Connect
+### 🔗 Connect
 
 - **GitHub:** [https://github.com/jangbahadursingh].
 - **LinkedIn:** [https://www.linkedin.com/in/jangbahadursingh1/].
 - **Portfolio:** [https://jbs.gt.tc/?i=2].
 
-## ⭐ Support
+### ⭐ Support
 
 If you find this project useful, consider giving the repository a ⭐ **Star**.
 
