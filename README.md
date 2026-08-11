@@ -1,10 +1,10 @@
-# 🎓 Student Resume | Intro
+# 🎓 My Portfolio | Intro
 
 A modern, responsive **Student Resume / Portfolio website** built with **HTML, CSS, and JavaScript**.
 
 ## 🌟 Live Preview
 
-🚀 **Live Demo:** Add your deployed website URL here.
+🚀 **Live Demo:** [https://jbs.gt.tc/?i=2].
 
 ## 📌 About The Project
 
@@ -41,7 +41,7 @@ The supplied `index.html` is a self-contained front-end project with embedded CS
 ## 📁 Project Structure
 
 ```text
-student-resume/
+myportfolio/
 │
 ├── index.html
 ├── profile.jpg
@@ -53,19 +53,19 @@ student-resume/
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/jangbahadursingh/myportfolio.git
 ```
 
 Example:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/student-resume.git
+git clone https://github.com/YOUR_USERNAME/myportfolio.git
 ```
 
 ### 2. Open the Project
 
 ```bash
-cd student-resume
+cd myportfolio
 ```
 
 ### 3. Add Your Profile Photo
@@ -73,7 +73,7 @@ cd student-resume
 Place your photo beside `index.html`:
 
 ```text
-student-resume/
+myportfolio/
 ├── index.html
 ├── profile.jpg
 └── README.md
@@ -104,19 +104,6 @@ const roles = [
 ];
 ```
 
-For a Python/Flask-focused profile, you can change it to:
-
-```javascript
-const roles = [
-    'Python',
-    'Flask',
-    'Web Development',
-    'HTML & CSS',
-    'JavaScript',
-    'MySQL',
-    'Git & GitHub'
-];
-```
 
 ## ✏️ Customize Your Resume
 
@@ -125,13 +112,13 @@ Update the following sections in `index.html`:
 ### Student Name
 
 ```html
-<div class="profile-name">JANG BAHADUR SINGH</div>
+<div class="profile-name">Student Name</div>
 ```
 
 ### Qualification / Role
 
 ```html
-<div class="profile-title">MCA(INTEGRATED) • Front-End Developer</div>
+<div class="profile-title">role • Front-End Developer</div>
 ```
 
 ### Projects
@@ -142,7 +129,6 @@ The Projects section currently contains:
 - Student Dashboard
 - Portfolio Landing
 
-Replace these with your actual projects and add GitHub/Live Demo links.
 
 ### Education
 
@@ -164,8 +150,6 @@ HTML
 CSS
 JavaScript
 MySQL
-Git
-GitHub
 ```
 
 ### Social Links
@@ -202,32 +186,6 @@ The JavaScript supports:
 - Close when switching back to desktop
 - Close using the **Escape** key
 
-## 🌐 Deploy with GitHub Pages
-
-This static project can be hosted free using GitHub Pages.
-
-1. Create a GitHub repository.
-2. Upload `index.html`.
-3. Upload `profile.jpg`.
-4. Upload `README.md`.
-5. Open **Settings → Pages**.
-6. Select the `main` branch and repository root.
-7. Save.
-8. Open the generated GitHub Pages URL.
-
-Example:
-
-```text
-https://YOUR_USERNAME.github.io/REPOSITORY_NAME/
-```
-
-## 📤 Push Updates to GitHub
-
-```bash
-git status
-git add .
-git commit -m "Update student resume website"
-git push origin main
 ```
 
 ## 🎯 Project Purpose
@@ -238,24 +196,18 @@ This project can be used as:
 - Personal portfolio
 - Fresher developer profile
 - Academic project showcase
-- GitHub Pages website
-- Front-end development practice project
 
 ## 🔮 Future Improvements
 
 Possible additions include:
 
 - 📄 Download Resume button
-- 🌐 Live project links
-- 💻 GitHub repository buttons
 - 📧 Contact form
-- 🐍 Python / Flask backend
 - 🗄️ Database integration
 - 🌓 Light/Dark mode
 - 📊 GitHub statistics
 - 🏆 Certificate links
 - 🖼️ Project screenshots
-- 🔗 LinkedIn and portfolio integration
 
 ## 👨‍💻 Developer
 
@@ -268,10 +220,9 @@ Possible additions include:
 
 ## 🔗 Connect
 
-- **GitHub:** Add your GitHub profile URL
-- **LinkedIn:** Add your LinkedIn profile URL
-- **Portfolio:** Add your portfolio URL
-- **Email:** Add your email address
+- **GitHub:** [https://github.com/jangbahadursingh].
+- **LinkedIn:** [https://www.linkedin.com/in/jangbahadursingh1/].
+- **Portfolio:** [https://jbs.gt.tc/?i=2].
 
 ## ⭐ Support
 
