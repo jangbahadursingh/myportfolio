@@ -185,7 +185,6 @@ The JavaScript supports:
 - Close after selecting a link
 - Close when switching back to desktop
 - Close using the **Escape** key
-
 ```
 
 ## 🎯 Project Purpose
