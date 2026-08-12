@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Resume | Intro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg0:#070A14;
+      --bg1:#0B1635;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.12);
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --line: rgba(255,255,255,.14);
+      --primary:#7C5CFF;
+      --primary2:#00D4FF;
+      --good:#2EE59D;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 500px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 420px at 90% 0%, rgba(0,212,255,.25), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* Subtle animated grain */
+    body::before{
+      content:"";
+      position:fixed; inset:-40%;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.25"/></svg>');
+      background-size: 300px 300px;
+      opacity:.10;
+      pointer-events:none;
+      transform: translate3d(0,0,0);
+      animation: grain 10s steps(10) infinite;
+      z-index:0;
+    }
+    @keyframes grain{
+      0%{ transform:translate(0,0); }
+      10%{ transform:translate(-5%, -10%); }
+      20%{ transform:translate(-15%, 5%); }
+      30%{ transform:translate(7%, -25%); }
+      40%{ transform:translate(-5%, 25%); }
+      50%{ transform:translate(-15%, 5%); }
+      60%{ transform:translate(15%, 0%); }
+      70%{ transform:translate(0%, 15%); }
+      80%{ transform:translate(-10%, 0%); }
+      90%{ transform:translate(10%, 10%); }
+      100%{ transform:translate(0,0); }
+    }
+
+    /* Leaves */
+    .leaf-layer{ position:fixed; inset:0; pointer-events:none; z-index:1; }
+    .leaf{ position:absolute; top:-10vh; width:14px; height:18px; opacity:.65; filter: drop-shadow(0 8px 16px rgba(0,0,0,.35)); }
+    .leaf svg{ width:100%; height:100%; }
+    @keyframes fall{
+      to{ transform: translate3d(var(--dx), 120vh, 0) rotate(var(--rot)); }
+    }
+
+    /* Layout */
+    .wrap{ position:relative; z-index:2; }
+
+    .container{ max-width: var(--max); margin:0 auto; padding: 0 20px; }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,10,20,.75), rgba(7,10,20,.35));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 210px;
+    }
+
+    .brand-badge{
+      width:36px; height:36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.75));
+      box-shadow: 0 10px 30px rgba(124,92,255,.25);
+      position:relative;
+      overflow:hidden;
+    }
+    .brand-badge::after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), transparent 55%);
+      transform: rotate(25deg);
+      animation: shimmer 2.6s ease-in-out infinite;
+    }
+    @keyframes shimmer{ 0%,100%{ transform: translateX(-10%) rotate(25deg);} 50%{ transform: translateX(20%) rotate(25deg);} }
+
+    .brand h1{ font-size: 14px; margin:0; font-weight:700; letter-spacing:.2px; line-height:1.1; }
+    .brand p{ margin:2px 0 0; font-size: 12px; color:var(--muted); font-weight:500; }
+
+    .nav-links{ display:flex; gap: 18px; align-items:center; flex-wrap:wrap; justify-content:center; }
+    .nav-links a{
+      font-size: 13px;
+      color: rgba(234,240,255,.85);
+      padding:10px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .nav-links a:hover{
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.14);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta{ display:flex; gap:10px; align-items:center; flex-shrink:0; }
+    .btn{
+      appearance:none; border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-weight:600;
+      font-size: 13px;
+      cursor:pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      display:inline-flex; align-items:center; gap:10px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.24); }
+
+    .btn-primary{
+      border: 1px solid rgba(124,92,255,.45);
+      background: linear-gradient(135deg, rgba(124,92,255,.85), rgba(0,212,255,.55));
+      box-shadow: 0 18px 40px rgba(124,92,255,.20);
+    }
+
+    /* Mobile menu */
+    .hamburger{ display:none; width:44px; height:44px; border-radius: 14px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color:var(--text); cursor:pointer; }
+    .hamburger svg{ width:20px; height:20px; }
+
+    .mobile-panel{
+      display:none;
+      padding: 0 0 16px;
+    }
+    .mobile-panel.is-open{ display:block; }
+    .mobile-panel a{ transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+    .mobile-panel a:hover, .mobile-panel a:focus-visible{
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.24);
+      transform: translateX(2px);
+    }
+
+    .mobile-panel a{ display:block; padding: 12px 12px; margin-top: 10px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); color: rgba(234,240,255,.92); }
+
+    /* Hero */
+    .hero{ padding: 56px 0 18px; }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .headline{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(0,212,255,1));
+      -webkit-background-clip: text;
+      background-clip:text;
+      color:transparent;
+      font-weight:800;
+      letter-spacing: .2px;
+      font-size: clamp(28px, 3.6vw, 48px);
+      margin:0;
+      line-height:1.1;
+      animation: fadeUp .8s ease both;
+    }
+    @keyframes fadeUp{ from{ opacity:0; transform: translateY(16px);} to{ opacity:1; transform: translateY(0);} }
+
+    .subline{
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height:1.7;
+      max-width: 60ch;
+      animation: fadeUp .9s .05s ease both;
+    }
+
+    .typing{
+      margin-top: 18px;
+      display:flex; align-items:center; gap: 10px;
+      color: rgba(234,240,255,.92);
+      animation: fadeUp 1s .12s ease both;
+    }
+    .typing .tag{
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: rgba(234,240,255,.88);
+      font-weight:600;
+    }
+    .typing .role{
+      font-weight:800;
+      font-size: 15px;
+      letter-spacing:.2px;
+      padding: 9px 0;
+    }
+    .cursor{
+      width: 10px; height: 18px; display:inline-block;
+      border-right: 2px solid rgba(255,255,255,.85);
+      margin-left: 4px;
+      animation: blink .7s step-end infinite;
+    }
+    @keyframes blink{ 50%{ border-right-color: transparent; } }
+
+    .hero-actions{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; animation: fadeUp 1s .18s ease both; }
+
+    /* Profile card */
+    .profile-card{
+      position:relative;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      padding: 18px;
+      animation: fadeUp 1.05s .2s ease both;
+    }
+
+    .profile-card::before{
+      content:"";
+      position:absolute; inset:-120px;
+      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,.45), transparent 50%),
+                  radial-gradient(circle at 70% 20%, rgba(0,212,255,.35), transparent 50%);
+      transform: rotate(10deg);
+      pointer-events:none;
+      animation: floatGlow 6s ease-in-out infinite;
+    }
+    @keyframes floatGlow{
+      0%,100%{ transform: translate3d(0,0,0) rotate(10deg); }
+      50%{ transform: translate3d(8px, -10px, 0) rotate(10deg); }
+    }
+
+    .profile-inner{ position:relative; z-index:1; }
+
+    .avatar{
+      width: 120px; height: 120px;
+      border-radius: 28px;
+      margin: 6px auto 10px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      overflow:hidden;
+      display:grid; place-items:center;
+      position:relative;
+    }
+    .avatar img{ width: 100%; height:100%; object-fit: cover; transform: scale(1.02); }
+    .avatar::after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.75), transparent 55%);
+      transform: rotate(25deg);
+      opacity:.35;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    .profile-name{ text-align:center; font-weight:900; font-size: 18px; margin: 6px 0 2px; }
+    .profile-title{ text-align:center; color:var(--muted); font-weight:600; font-size: 13px; margin:0 0 14px; }
+
+    .info-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pill{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 10px;
+      min-height: 62px;
+    }
+    .pill .k{ color: rgba(234,240,255,.70); font-size: 11px; font-weight:700; letter-spacing:.3px; text-transform: uppercase; }
+    .pill .v{ margin-top: 7px; font-weight:800; font-size: 13px; }
+
+    /* Section base */
+    section{ padding: 42px 0; }
+    .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap: 16px; margin-bottom: 18px; }
+    .section-head h2{ margin:0; font-size: 20px; font-weight:900; letter-spacing:.2px; }
+    .section-head p{ margin:0; color:var(--muted); font-size: 13px; line-height:1.5; max-width: 60ch; }
+
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.22);
+    }
+
+    .card h3{ margin:0 0 6px; font-size: 15px; font-weight:900; }
+    .card .meta{ color: var(--muted); font-weight:700; font-size: 12px; margin-top: 2px; }
+    .card p{ margin: 10px 0 0; color: rgba(234,240,255,.80); font-size: 13px; line-height:1.7; }
+
+    /* Projects */
+    .project-list{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .project{
+      position:relative;
+      overflow:hidden;
+      transform: translateZ(0);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .project:hover{ transform: translateY(-4px); border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.08); }
+    .project .tagline{ margin:8px 0 0; color: rgba(234,240,255,.78); font-size: 13px; line-height:1.7; }
+
+    .project .tech{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 12px; }
+    .chip{
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight:700;
+      color: rgba(234,240,255,.85);
+    }
+
+    /* Education */
+    .timeline{ display:grid; gap: 12px; }
+    .edu-item{
+      position:relative;
+      padding-left: 18px;
+    }
+    .edu-item::before{
+      content:"";
+      position:absolute; left:0; top:8px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(0,212,255,1));
+      box-shadow: 0 0 0 5px rgba(124,92,255,.18);
+    }
+    .edu-item .row{ display:flex; gap: 10px; flex-wrap:wrap; align-items:baseline; }
+    .edu-item .year{ font-weight:900; font-size: 13px; color: rgba(234,240,255,.86); }
+    .edu-item .title{ font-weight:900; font-size: 14px; }
+    .edu-item .place{ color: var(--muted); font-weight:700; font-size: 12.5px; }
+
+    /* Details (accordion) */
+    details{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.20);
+    }
+    details + details{ margin-top: 12px; }
+
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:900;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      font-size: 14px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+
+    .summary-left{ display:flex; align-items:center; gap: 10px; }
+    .summary-badge{
+      width: 34px; height: 34px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      display:grid; place-items:center;
+    }
+    .summary-badge svg{ width:18px; height:18px; }
+
+    .chev{
+      width: 18px; height: 18px;
+      transition: transform .22s ease;
+      opacity:.9;
+    }
+    details[open] .chev{ transform: rotate(180deg); }
+
+    details p{ margin: 10px 0 0; color: rgba(234,240,255,.80); font-size: 13px; line-height:1.7; }
+
+    /* Footer */
+    footer{
+      padding: 32px 0 48px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(11,22,53,.0), rgba(11,22,53,.55));
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-grid{ display:flex; align-items:center; justify-content:space-between; gap: 16px; flex-wrap:wrap; }
+    .footer-left{ display:flex; flex-direction:column; gap: 6px; }
+    .footer-left .small{ color: var(--muted); font-size: 13px; }
+    .social{ display:flex; gap: 10px; flex-wrap:wrap; }
+    .icon-btn{
+      width: 44px; height: 44px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      display:grid; place-items:center;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .icon-btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.25); }
+    .icon-btn svg{ width: 18px; height:18px; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .profile-card{ order: 2; }
+      .project-list{ grid-template-columns: repeat(2, 1fr); }
+      .nav-links{ gap: 8px; }
+      .nav-links a{ padding: 9px 8px; }
+    }
+
+    @media (max-width: 760px){
+      .nav-links{ display:none; }
+      .nav-cta .btn{ display:none; }
+      .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
+      .mobile-panel{ display:none; }
+      .mobile-panel.is-open{ display:block; }
+      .project-list{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .section-head{ align-items:flex-start; flex-direction:column; }
+    }
+
+    @media (min-width: 761px){
+      .hamburger, .mobile-panel{ display:none !important; }
+    }
+
+    /* Extra small phones */
+    @media (max-width: 420px){
+      .container{ padding: 0 14px; }
+      .hero{ padding: 42px 0 14px; }
+      section{ padding: 34px 0; }
+      .nav{ padding: 12px 0; }
+      .brand{ min-width: 0; }
+
+      .profile-card{ padding: 14px; }
+      .avatar{ width: 96px; height: 96px; border-radius: 24px; }
+      .profile-name{ font-size: 16px; }
+      .profile-title{ margin-bottom: 12px; }
+      .pill{ min-height: 56px; padding: 9px; }
+      .pill .v{ font-size: 12.5px; }
+
+      .section-head{ margin-bottom: 14px; }
+      .section-head h2{ font-size: 18px; }
+      .section-head p{ font-size: 12.5px; }
+
+      .project-list{ gap: 12px; }
+      .card{ padding: 14px; }
+      .grid-2{ gap: 12px; }
+
+      details{ padding: 11px 12px; }
+      summary{ font-size: 13px; }
+      .headline{ letter-spacing: .15px; }
+      .subline{ word-break: break-word; overflow-wrap: anywhere; }
+    }
+
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .leaf-layer{ display:none; }
+    }
+
+  </style>
+
+<style>
+/* ===== Student Resume Header + Top-Right Profile Photo ===== */
+.brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.brand-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.resume-profile-photo {
+  flex: 0 0 88px;
+  width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+
+.resume-profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .brand {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .resume-profile-photo {
+    flex-basis: 76px;
+    width: 76px;
+    height: 76px;
+    border-radius: 13px;
+  }
+
+  .brand-content h1 {
+    font-size: 1.35rem;
+  }
+
+  .brand-content p {
+    font-size: .85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .resume-profile-photo {
+    flex-basis: 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 11px;
+  }
+
+  .brand-content {
+    gap: 8px;
+  }
+
+  .brand-content h1 {
+    font-size: 1.05rem;
+  }
+
+  .brand-content p {
+    font-size: .72rem;
+  }
+
+  .brand-badge {
+    display: none;
+  }
+}
+</style>
+
+</head>
+<body>
+  <!-- Leaves animation layer -->
+  <div class="leaf-layer" aria-hidden="true" id="leafLayer"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="nav">
+          <div class="brand" aria-label="Brand">
+            <!-- Profile Photo: appears BEFORE the Student Resume text -->
+            <div class="resume-profile-photo">
+              <img src="profile.jpg" alt="Student profile photo">
+            </div>
+
+            <div class="brand-content">
+              <div class="brand-badge" aria-hidden="true"></div>
+              <div>
+                <h1>Student Resume</h1>
+                <p>Portfolio • Projects • Education</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#details">Details</a>
+          </nav>
+
+          <div class="nav-cta">
+            <a class="btn" href="#education" aria-label="Jump to education">
+              <span>View Education</span>
+            </a>
+            <a class="btn btn-primary" href="#projects" aria-label="Jump to projects">
+              <span>See Projects</span>
+            </a>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#details">Details</a>
+          <div style="height: 10px;"></div>
+          <a href="#projects" style="border-color: rgba(124,92,255,.45); background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(0,212,255,.18));">
+            See Projects
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" id="home">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <h2 class="headline">Hello, I’m <span style="white-space:nowrap;">Student</span> • Building Web Experiences</h2>
+            <p class="subline">
+              A responsive student resume website with animated header/footer, smooth navigation, projects showcase,
+              education timeline, and interactive details sections—made to look great on phones, tablets, and desktops.
+            </p>
+
+            <div class="typing" aria-label="Role typing">
+              <span class="tag">Now Learning</span>
+              <span class="role" id="roleText">Web Development</span>
+              <span class="cursor" aria-hidden="true"></span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 12H0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M24 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M5 5L7.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M19 19L16.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M19 5L16.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M5 19L7.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Explore Projects</span>
+              </a>
+              <a class="btn" href="#details">
+                <span>Open Details</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="profile-card" aria-label="Profile">
+            <div class="profile-inner">
+              <div class="avatar">
+                <!-- Replace this image URL with your own profile photo if you want -->
+                <img alt="Profile photo" src="" />
+              </div>
+              <div class="profile-name">Student Name</div>
+              <div class="profile-title">role • Front-End Developer</div>
+
+              <div class="info-grid" role="list">
+                <div class="pill" role="listitem">
+                  <div class="k">Location</div>
+                  <div class="v">Your City</div>
+                </div>
+                <div class="pill" role="listitem">
+                  <div class="k">Email</div>
+                  <div class="v">you@example.com</div>
+                </div>
+                <div class="pill" role="listitem">
+                  <div class="k">Status</div>
+                  <div class="v">Open to Internships</div>
+                </div>
+                <div class="pill" role="listitem">
+                  <div class="k">Focus</div>
+                  <div class="v">UI + Animations</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="projects" aria-label="Projects">
+        <div class="section-head">
+          <div>
+            <h2>Projects</h2>
+            <p>Featured student projects with clean cards, hover animation, and technology chips.</p>
+          </div>
+        </div>
+
+        <div class="project-list">
+          <article class="card project">
+            <h3>Resume Builder</h3>
+            <div class="meta">Responsive • Forms • Preview</div>
+            <p class="tagline">A form-based resume builder that instantly updates a printable preview with smooth UI transitions.</p>
+            <div class="tech">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <h3>Student Dashboard</h3>
+            <div class="meta">Charts • Cards • Dark Mode</div>
+            <p class="tagline">A dashboard layout for assignments and progress, designed with accessibility and responsive spacing.</p>
+            <div class="tech">
+              <span class="chip">UI Design</span>
+              <span class="chip">CSS Grid</span>
+              <span class="chip">Animations</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <h3>Portfolio Landing</h3>
+            <div class="meta">Hero • Sections • Smooth Nav</div>
+            <p class="tagline">A complete landing page with animated hero, sticky header, and interactive “Details” accordion.</p>
+            <div class="tech">
+              <span class="chip">Responsive</span>
+              <span class="chip">CSS</span>
+              <span class="chip">Web Animations</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" aria-label="Education">
+        <div class="section-head">
+          <div>
+            <h2>Education</h2>
+            <p>Timeline-style education section for a strong, modern resume look.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="timeline">
+            <div class="edu-item">
+              <div class="row">
+                <span class="year">2024 — 2026</span>
+                <span class="title">B.Tech / Bachelor Degree</span>
+              </div>
+              <div class="place">Your College Name • Your Department</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="row">
+                <span class="year">2022 — 2024</span>
+                <span class="title">Intermediate / Diploma</span>
+              </div>
+              <div class="place">Your School/Institute</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="row">
+                <span class="year">2018 — 2022</span>
+                <span class="title">Secondary School</span>
+              </div>
+              <div class="place">Your School Name</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="details" aria-label="Details">
+        <div class="section-head">
+          <div>
+            <h2>Details</h2>
+            <p>Accordion sections. Leave them closed or open—everything stays responsive and animated.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <details open>
+              <summary>
+                <span class="summary-left">
+                  <span class="summary-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 12V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M12 7H12.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </span>
+                  Personal Summary
+                </span>
+                <svg class="chev" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p>
+                Motivated student focused on building clean user interfaces and responsive layouts.
+                I enjoy learning new web technologies and creating projects that look modern and feel smooth.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <span class="summary-left">
+                  <span class="summary-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  Skills
+                </span>
+                <svg class="chev" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p>
+                HTML, CSS, JavaScript, Responsive Design, UI/UX basics, and beginner-friendly project architecture.
+                (Replace this section with your real skills.)
+              </p>
+            </details>
+          </div>
+
+          <div>
+            <details>
+              <summary>
+                <span class="summary-left">
+                  <span class="summary-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 1V23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M17 5H9C7.34315 5 6 6.34315 6 8V16C6 17.6569 7.34315 19 9 19H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  Certifications
+                </span>
+                <svg class="chev" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p>
+                Add your certificates here (e.g., courses, internships, workshops).
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <span class="summary-left">
+                  <span class="summary-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 10c0 8-9 13-9 13S3 18 3 10a9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </span>
+                  Interests
+                </span>
+                <svg class="chev" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p>
+                Web design, animation, and building small tools that solve everyday problems.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-left">
+            <div style="font-weight:900;">Your Name • Student</div>
+            <div class="small">Built with HTML + CSS + JavaScript • Responsive layout • Animated leaves</div>
+          </div>
+
+          <div class="social" aria-label="Social links">
+            <a class="icon-btn" href="#" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 19c-4 1.5-4-2-5-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M14 22v-3.5c0-1 .1-1.4-.5-2 2-.2 4-.9 4-4.5 0-1-.4-2-1.1-2.8.1-.3.5-1.5-.1-2.7 0 0-1-.3-3.2 1.1-.9-.3-1.9-.5-2.9-.5s-2 .2-2.9.5C6.1 4.7 5.1 5 5.1 5c-.6 1.2-.2 2.4-.1 2.7C4.3 8.5 4 9.5 4 10.5c0 3.6 2 4.3 4 4.5-.5.6-.5 1-.5 2V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="icon-btn" href="#" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9H3V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M4.5 6.5C5.32843 6.5 6 5.82843 6 5C6 4.17157 5.32843 3.5 4.5 3.5C3.67157 3.5 3 4.17157 3 5C3 5.82843 3.67157 6.5 4.5 6.5Z" fill="currentColor"/>
+                <path d="M10 21V9H13V10.5C13.5 9.6 14.5 9 16 9C18.7 9 19 11.2 19 13.2V21H16V13.8C16 12.5 16 11.3 14.6 11.3C13.2 11.3 13 12.6 13 13.8V21H10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="icon-btn" href="#" aria-label="Email" title="Email">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H20V20H4V4Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 6L12 13L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Responsive mobile navigation
+    const hamburger = document.getElementById('hamburger');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const mobileLinks = mobilePanel ? mobilePanel.querySelectorAll('a') : [];
+
+    function closeMobileMenu(){
+      if(!hamburger || !mobilePanel) return;
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
+      mobilePanel.classList.remove('is-open');
+      mobilePanel.setAttribute('aria-hidden', 'true');
+    }
+
+    function toggleMobileMenu(){
+      if(!hamburger || !mobilePanel) return;
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+      mobilePanel.classList.toggle('is-open', !isOpen);
+      mobilePanel.setAttribute('aria-hidden', String(isOpen));
+    }
+
+    hamburger?.addEventListener('click', toggleMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    // Close the mobile menu when switching back to desktop width.
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 760) closeMobileMenu();
+    });
+
+    // Close with Escape for keyboard accessibility.
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape') closeMobileMenu();
+    });
+
+    // Typing role animation
+    const roles = [
+      'Web Development',
+      'UI/UX Design',
+      'Front-End Engineering',
+      'JavaScript & Animations'
+    ];
+
+    const roleText = document.getElementById('roleText');
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const typeSpeed = 55;
+    const deleteSpeed = 35;
+    const hold = 900;
+
+    function tick(){
+      const current = roles[roleIndex];
+      if(!roleText) return;
+
+      if(!deleting){
+        charIndex++;
+        roleText.textContent = current.slice(0, charIndex);
+        if(charIndex >= current.length){
+          deleting = true;
+          setTimeout(tick, hold);
+          return;
+        }
+      } else {
+        charIndex--;
+        roleText.textContent = current.slice(0, Math.max(0, charIndex));
+        if(charIndex <= 0){
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+
+      setTimeout(tick, deleting ? deleteSpeed : typeSpeed);
+    }
+    tick();
+
+    // Leaves generation
+    const layer = document.getElementById('leafLayer');
+    if(layer){
+      const leafSVG = (color1, color2) => `
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="${color1}"/>
+              <stop offset="1" stop-color="${color2}"/>
+            </linearGradient>
+          </defs>
+          <path d="M20.5 3.5c-6 1-12 7-13 13.5C7 19.5 8 21 9.5 21c6.5-1 12.5-7 13-13.5.1-1.2-.9-2.7-2-4Z" fill="url(#g)"/>
+          <path d="M7.5 16.5c3-4 7-7 11-9" stroke="rgba(255,255,255,.6)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        </svg>`;
+
+      const colors = [
+        ['#7C5CFF', '#00D4FF'],
+        ['#2EE59D', '#00D4FF'],
+        ['#FF5C93', '#7C5CFF']
+      ];
+
+      const count = 18; // performance-friendly
+      for(let i=0;i<count;i++){
+        const d = document.createElement('div');
+        d.className = 'leaf';
+
+        const c = colors[i % colors.length];
+        d.innerHTML = leafSVG(c[0], c[1]);
+
+        const left = Math.random() * 100;
+        const size = 10 + Math.random() * 14;
+        const dur = 5 + Math.random() * 7;
+        const delay = Math.random() * 3;
+        const dx = (Math.random() * 60 - 30).toFixed(0) + 'px';
+        const rot = (Math.random() * 220 - 110).toFixed(0) + 'deg';
+
+        d.style.left = left + '%';
+        d.style.width = size + 'px';
+        d.style.height = (size * 1.12) + 'px';
+        d.style.opacity = (0.35 + Math.random() * 0.55).toFixed(2);
+        d.style.setProperty('--dx', dx);
+        d.style.setProperty('--rot', rot);
+        d.style.animation = `fall ${dur}s linear ${delay}s infinite`;
+
+        layer.appendChild(d);
+      }
+    }
+  </script>
+</body>
+</html>
