@@ -187,7 +187,7 @@ The JavaScript supports:
 - Close using the **Escape** key.
 ```
 
-### 🎯 Project Purpose
+## 🎯 Project Purpose
 
 This project can be used as:
 
@@ -195,20 +195,23 @@ This project can be used as:
 - Personal portfolio
 - Fresher developer profile
 - Academic project showcase
+- GitHub Pages website
+- Front-end development practice project
 
-### 🔮 Future Improvements
+## 🔮 Future Improvements
 
 Possible additions include:
 
 - 📄 Download Resume button
 - 📧 Contact form
+- 🐍 Python / Flask backend
 - 🗄️ Database integration
 - 🌓 Light/Dark mode
 - 📊 GitHub statistics
 - 🏆 Certificate links
 - 🖼️ Project screenshots
 
-### 👨‍💻 Developer
+## 👨‍💻 Developer
 
 **JANG BAHADUR SINGH**
 
@@ -217,13 +220,13 @@ Possible additions include:
 🌐 Web Development  
 🚀 Learning and Building Projects
 
-### 🔗 Connect
+## 🔗 Connect
 
-- **GitHub:** [https://github.com/jangbahadursingh].
-- **LinkedIn:** [https://www.linkedin.com/in/jangbahadursingh1/].
-- **Portfolio:** [https://jbs.gt.tc/?i=2].
+- **GitHub:** https://github.com/jangbahadursingh
+- **LinkedIn:** https://www.linkedin.com/in/jangbahadursingh1/
+- **Portfolio:** https://jbs.gt.tc/?i=2
 
-### ⭐ Support
+## ⭐ Support
 
 If you find this project useful, consider giving the repository a ⭐ **Star**.
 
