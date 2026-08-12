@@ -189,49 +189,64 @@ The JavaScript supports:
 
 ## 🎯 Project Purpose
 
-This project can be used as:
+This project is designed to serve as:
 
-- Student resume
-- Personal portfolio
-- Fresher developer profile
-- Academic project showcase
-- GitHub Pages website
-- Front-end development practice project
+* 🎓 **Student Resume**
+* 💼 **Personal Portfolio**
+* 🚀 **Fresher Developer Profile**
+* 📚 **Academic Project Showcase**
+* 🌐 **GitHub Pages Website**
+* 💻 **Front-End Development Practice Project**
+
+---
 
 ## 🔮 Future Improvements
 
-Possible additions include:
+Planned features and improvements include:
 
-- 📄 Download Resume button
-- 📧 Contact form
-- 🐍 Python / Flask backend
-- 🗄️ Database integration
-- 🌓 Light/Dark mode
-- 📊 GitHub statistics
-- 🏆 Certificate links
-- 🖼️ Project screenshots
+* 📄 **Download Resume** button
+* 📧 **Contact Form**
+* 🐍 **Python & Flask Backend**
+* 🗄️ **Database Integration**
+* 🌓 **Light / Dark Mode**
+* 📊 **GitHub Statistics**
+* 🏆 **Certificates & Achievements**
+* 🖼️ **Project Screenshots**
+
+---
 
 ## 👨‍💻 Developer
 
-**JANG BAHADUR SINGH**
+### **JANG BAHADUR SINGH**
 
-🎓 MCA (Integrated)  
-💻 Student / Developer  
-🌐 Web Development  
-🚀 Learning and Building Projects
+🎓 **MCA (Integrated) Graduate**
+💻 **Student / Developer**
+🐍 **Python & Flask Developer**
+🌐 **Web Development**
+🚀 **Learning, Building & Exploring New Technologies**
 
-## 🔗 Connect
+---
 
-- **GitHub:** https://github.com/jangbahadursingh
-- **LinkedIn:** https://www.linkedin.com/in/jangbahadursingh1/
-- **Portfolio:** https://jbs.gt.tc/?i=2
+## 🔗 Connect With Me
+
+* 🐙 **GitHub:** [Jang Bahadur Singh](https://github.com/jangbahadursingh).
+* 💼 **LinkedIn:** [Jang Bahadur Singh](https://www.linkedin.com/in/jangbahadursingh1/).
+* 🌐 **Portfolio:** [Visit My Portfolio](https://jbs.gt.tc/?i=2).
+
+---
 
 ## ⭐ Support
 
-If you find this project useful, consider giving the repository a ⭐ **Star**.
+If you find this project useful or interesting, please consider giving the repository a ⭐ **Star**.
+
+Your support and feedback are greatly appreciated! 🙌
+
+---
 
 <p align="center">
 
-**Built with HTML + CSS + JavaScript ❤️**
+### 🚀 Built with HTML + CSS + JavaScript ❤️
+
+**Learning • Building • Improving**
 
 </p>
